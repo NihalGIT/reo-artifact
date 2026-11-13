@@ -1,0 +1,54 @@
+{
+  "policy": "ecre-policy-1.0.0",
+  "mutants": 779,
+  "pairs": 7790,
+  "decision_changes_fresh": 669,
+  "decision_changes_with_history": 669,
+  "pairs_where_rule_changes_decision": 4,
+  "transitions": {
+    "conditional -> fresh accepted_with_reservations / with history pending_review": 2,
+    "conditional -> fresh accepted / with history pending_review": 2
+  },
+  "by_operator": {
+    "DEL-T": 2,
+    "DEL-E": 2
+  },
+  "removed_premises": {
+    "U001_DrugDBFrequency": 4
+  },
+  "prop2_violations_reassessment": 0,
+  "examples": [
+    {
+      "mutant": "M0214",
+      "desc": "delete U001_DrugDBFrequency type UnknownUncertainty",
+      "rid": "R001",
+      "base": "conditional",
+      "fresh": "accepted_with_reservations",
+      "with_history": "pending_review"
+    },
+    {
+      "mutant": "M0214",
+      "desc": "delete U001_DrugDBFrequency type UnknownUncertainty",
+      "rid": "R007",
+      "base": "conditional",
+      "fresh": "accepted",
+      "with_history": "pending_review"
+    },
+    {
+      "mutant": "M0269",
+      "desc": "delete element U001_DrugDBFrequency",
+      "rid": "R001",
+      "base": "conditional",
+      "fresh": "accepted_with_reservations",
+      "with_history": "pending_review"
+    },
+    {
+      "mutant": "M0269",
+      "desc": "delete element U001_DrugDBFrequency",
+      "rid": "R007",
+      "base": "conditional",
+      "fresh": "accepted",
+      "with_history": "pending_review"
+    }
+  ]
+}

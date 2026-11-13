@@ -1,0 +1,133 @@
+@prefix reo:  <http://re-environment-onto.org/ontology#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+# ============================================================
+# REO DERIVATION SHAPES — REO v1.0.0
+# Closed-world obligations for requirement annotations and
+# decision records (complements reo-shapes.ttl).
+# ============================================================
+
+reo:RequirementShape a sh:NodeShape ;
+    sh:targetClass reo:Requirement ;
+    sh:name "RequirementShape" ;
+    sh:property [ sh:path reo:requirementId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                  sh:message "A requirement needs exactly one identifier." ] ;
+    sh:property [ sh:path reo:requirementText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                  sh:message "A requirement needs exactly one natural-language text." ] ;
+    sh:property [ sh:path reo:hasSeedGoal ; sh:minCount 1 ; sh:maxCount 1 ; sh:class reo:Goal ;
+                  sh:message "A requirement is anchored to exactly one seed goal." ] ;
+    sh:property [ sh:path reo:assessedInContext ; sh:minCount 1 ; sh:maxCount 1 ; sh:class reo:Context ;
+                  sh:message "A requirement is assessed in exactly one context." ] ;
+    sh:property [ sh:path reo:hasResponsibleActor ; sh:maxCount 1 ; sh:class reo:Actor ] ;
+    sh:property [ sh:path reo:performsAction ; sh:class reo:Action ] ;
+    sh:property [ sh:path reo:refersToConcept ; sh:class reo:DomainConcept ] ;
+    sh:property [ sh:path reo:refersToProperty ; sh:class reo:DomainProperty ] ;
+    sh:property [ sh:path reo:usesInteraction ; sh:maxCount 1 ; sh:class reo:Interaction ] ;
+    sh:property [ sh:path reo:requiresAuthorityOf ; sh:maxCount 1 ; sh:class reo:Actor ] ;
+    sh:property [ sh:path reo:expectsInteractionSource ; sh:maxCount 1 ; sh:class reo:Actor ] ;
+    sh:property [ sh:path reo:requiresProtocol ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ;
+    sh:property [ sh:path reo:declaresHardConstraint ; sh:class reo:Constraint ] ;
+    sh:property [ sh:path reo:declaresSoftConstraint ; sh:class reo:Constraint ] ;
+    # A referenced property must belong to a referenced concept.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Referenced domain property {?p} does not belong to any concept referenced by the requirement." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            SELECT $this ?p WHERE {
+                $this reo:refersToProperty ?p .
+                FILTER NOT EXISTS { $this reo:refersToConcept ?c . ?c reo:hasProperty ?p . }
+            }""" ;
+    ] ;
+    # Annotation completeness (warnings): the contract leaves these obligations undecided.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Warning ;
+        sh:message "Performed action {?a} is declared without a responsible actor; its capability cannot be checked." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            SELECT $this ?a WHERE {
+                $this reo:performsAction ?a .
+                FILTER NOT EXISTS { $this reo:hasResponsibleActor ?x . }
+            }""" ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:severity sh:Warning ;
+        sh:message "An expected interaction source or a required protocol is declared without a used interaction." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            SELECT $this WHERE {
+                { $this reo:expectsInteractionSource ?s . } UNION { $this reo:requiresProtocol true . }
+                FILTER NOT EXISTS { $this reo:usesInteraction ?i . }
+            }""" ;
+    ] .
+
+reo:DerivationRecordShape a sh:NodeShape ;
+    sh:targetClass reo:DerivationRecord ;
+    sh:name "DerivationRecordShape" ;
+    sh:property [ sh:path reo:assesses ; sh:minCount 1 ; sh:maxCount 1 ; sh:class reo:Requirement ] ;
+    sh:property [ sh:path reo:hasDecision ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( reo:Accepted reo:AcceptedWithReservations reo:Conditional
+                          reo:PendingReview reo:Rejected reo:NotDerived ) ] ;
+    sh:property [ sh:path reo:environmentSnapshot ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path reo:candidateSnapshot ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path reo:policyVersion ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class reo:ValidationActivity ] ;
+    # A superseded record belongs to the same record history (it is in the validated graph).
+    sh:property [ sh:path reo:supersedes ; sh:class reo:DerivationRecord ;
+                  sh:message "A superseded record must be a derivation record of the validated history." ] ;
+    # A record supersedes only another record of the same requirement, and the supersession history has no cycle.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A record supersedes itself or a record of another requirement: {?p}." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            SELECT $this ?p WHERE {
+                $this reo:supersedes ?p .
+                ?p a reo:DerivationRecord .
+                FILTER (?p = $this || NOT EXISTS { $this reo:assesses ?q . ?p reo:assesses ?q . })
+            }""" ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "The supersession history of this record has a cycle." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            SELECT $this WHERE {
+                $this reo:supersedes ?p .
+                ?p reo:supersedes* $this .
+                FILTER (?p != $this)
+            }""" ;
+    ] ;
+    # An accepted record must have consulted at least one element (non-empty trace).
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "An accepted record must have a non-empty trace." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this WHERE {
+                $this reo:hasDecision ?d .
+                FILTER (?d IN (reo:Accepted, reo:AcceptedWithReservations))
+                $this prov:wasGeneratedBy ?a .
+                FILTER NOT EXISTS { ?a reo:consulted ?e . }
+            }""" ;
+    ] ;
+    # Non-vacuity: an accepted, accepted-with-reservations, or conditional record states at least one
+    # discharged obligation (a justification with outcome OK).
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "A record with an acceptance-type or conditional decision states no discharged obligation." ;
+        sh:select """
+            PREFIX reo: <http://re-environment-onto.org/ontology#>
+            SELECT $this WHERE {
+                $this reo:hasDecision ?d .
+                FILTER (?d IN (reo:Accepted, reo:AcceptedWithReservations, reo:Conditional))
+                FILTER NOT EXISTS { $this reo:hasJustification ?j . FILTER(STRSTARTS(STR(?j), "OK")) }
+            }""" ;
+    ] .

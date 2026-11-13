@@ -1,0 +1,5367 @@
+{
+ "requirements": 10,
+ "perturbations": 561,
+ "outcomes": {
+  "more permissive": 12,
+  "to review, rejection or not derived": 176,
+  "unchanged": 331,
+  "weaker acceptance": 10,
+  "between review, rejection, not derived": 32
+ },
+ "by_operator": {
+  "add": {
+   "unchanged": 145,
+   "to review, rejection or not derived": 63,
+   "weaker acceptance": 6,
+   "between review, rejection, not derived": 10,
+   "more permissive": 1
+  },
+  "drop": {
+   "to review, rejection or not derived": 15,
+   "unchanged": 45,
+   "between review, rejection, not derived": 2,
+   "more permissive": 1
+  },
+  "flag": {
+   "unchanged": 7,
+   "to review, rejection or not derived": 3
+  },
+  "swap": {
+   "more permissive": 10,
+   "to review, rejection or not derived": 95,
+   "unchanged": 134,
+   "weaker acceptance": 4,
+   "between review, rejection, not derived": 20
+  }
+ },
+ "by_field": {
+  "actions": {
+   "unchanged": 75,
+   "to review, rejection or not derived": 72,
+   "between review, rejection, not derived": 21,
+   "more permissive": 2
+  },
+  "actor": {
+   "to review, rejection or not derived": 18,
+   "unchanged": 10,
+   "between review, rejection, not derived": 2
+  },
+  "authority_of": {
+   "unchanged": 10,
+   "to review, rejection or not derived": 8
+  },
+  "concepts": {
+   "to review, rejection or not derived": 11,
+   "unchanged": 16,
+   "between review, rejection, not derived": 1,
+   "more permissive": 1
+  },
+  "context": {
+   "to review, rejection or not derived": 3,
+   "unchanged": 6,
+   "more permissive": 1
+  },
+  "hard": {
+   "unchanged": 33,
+   "to review, rejection or not derived": 7,
+   "weaker acceptance": 3
+  },
+  "interaction": {
+   "to review, rejection or not derived": 6,
+   "unchanged": 4,
+   "between review, rejection, not derived": 2
+  },
+  "interaction_source": {
+   "unchanged": 10,
+   "to review, rejection or not derived": 6,
+   "between review, rejection, not derived": 2
+  },
+  "properties": {
+   "unchanged": 101,
+   "to review, rejection or not derived": 36,
+   "between review, rejection, not derived": 4
+  },
+  "requires_protocol": {
+   "unchanged": 7,
+   "to review, rejection or not derived": 3
+  },
+  "seed_goal": {
+   "more permissive": 8,
+   "unchanged": 28,
+   "weaker acceptance": 4
+  },
+  "soft": {
+   "unchanged": 31,
+   "to review, rejection or not derived": 6,
+   "weaker acceptance": 3
+  }
+ },
+ "by_requirement": {
+  "R001": {
+   "more permissive": 4,
+   "to review, rejection or not derived": 30,
+   "unchanged": 36
+  },
+  "R002": {
+   "unchanged": 25,
+   "weaker acceptance": 1,
+   "to review, rejection or not derived": 37
+  },
+  "R003": {
+   "unchanged": 22,
+   "weaker acceptance": 3,
+   "to review, rejection or not derived": 28
+  },
+  "R004": {
+   "unchanged": 21,
+   "weaker acceptance": 3,
+   "to review, rejection or not derived": 24
+  },
+  "R005": {
+   "unchanged": 25,
+   "between review, rejection, not derived": 28
+  },
+  "R006": {
+   "unchanged": 50,
+   "between review, rejection, not derived": 3
+  },
+  "R007": {
+   "more permissive": 4,
+   "to review, rejection or not derived": 27,
+   "unchanged": 19
+  },
+  "R008": {
+   "unchanged": 60,
+   "more permissive": 3
+  },
+  "R009": {
+   "unchanged": 20,
+   "weaker acceptance": 3,
+   "to review, rejection or not derived": 30
+  },
+  "R010": {
+   "unchanged": 53,
+   "between review, rejection, not derived": 1,
+   "more permissive": 1
+  }
+ },
+ "by_reference_group": {
+  "acceptance-type reference": {
+   "more permissive": 8,
+   "to review, rejection or not derived": 176,
+   "unchanged": 143,
+   "weaker acceptance": 10
+  },
+  "negative reference": {
+   "unchanged": 188,
+   "between review, rejection, not derived": 32,
+   "more permissive": 4
+  }
+ },
+ "requirements_by_group": {
+  "acceptance-type reference": [
+   "R001",
+   "R002",
+   "R003",
+   "R004",
+   "R007",
+   "R009"
+  ],
+  "negative reference": [
+   "R005",
+   "R006",
+   "R008",
+   "R010"
+  ]
+ },
+ "transitions": {
+  "accepted->accepted": 63,
+  "accepted->accepted_with_reservations": 6,
+  "accepted->conditional": 3,
+  "accepted->pending_review": 12,
+  "accepted->rejected": 70,
+  "accepted_with_reservations->accepted_with_reservations": 25,
+  "accepted_with_reservations->conditional": 1,
+  "accepted_with_reservations->pending_review": 4,
+  "accepted_with_reservations->rejected": 33,
+  "conditional->accepted": 4,
+  "conditional->accepted_with_reservations": 4,
+  "conditional->conditional": 55,
+  "conditional->pending_review": 9,
+  "conditional->rejected": 48,
+  "pending_review->pending_review": 25,
+  "pending_review->rejected": 28,
+  "rejected->accepted": 1,
+  "rejected->accepted_with_reservations": 3,
+  "rejected->pending_review": 4,
+  "rejected->rejected": 163
+ },
+ "more_permissive_by_field_operator": {
+  "swap:seed_goal": 8,
+  "swap:context": 1,
+  "drop:actions": 1,
+  "swap:actions": 1,
+  "add:concepts": 1
+ },
+ "more_permissive_examples": [
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G001",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G003",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G004",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G005",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G001",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G003",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G004",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G005",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "context",
+   "change": "X002_Outpatient -> X001_EmergencyDept",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_AccessRecords -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Diagnose",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D001_Medication",
+   "state": "accepted",
+   "outcome": "more permissive"
+  }
+ ],
+ "rows": [
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G001",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G003",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G004",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G005",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Physician -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "authority_of",
+   "change": "Physician -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "interaction",
+   "change": "I001_PhysicianToEHR -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "interaction",
+   "change": "I001_PhysicianToEHR -> I002_EHRToPharmacy",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "interaction_source",
+   "change": "Physician -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_AccessRecords -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Diagnose",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Prescribe -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Diagnose",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D002_Patient -> none",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_Contraindications -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_Allergies",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_Dosage",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_MedName",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_MedicalHistory",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_PatientId",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_Route",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> Prop_Allergies",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> Prop_Dosage",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> Prop_MedName",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> Prop_MedicalHistory",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> Prop_PatientId",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_CurrentMedications -> Prop_Route",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "hard",
+   "change": "C002_FDA -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "hard",
+   "change": "C002_FDA -> C001_HIPAA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "hard",
+   "change": "C002_FDA -> C003_ResponseTime",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "hard",
+   "change": "C002_FDA -> C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R001",
+   "reference": "conditional",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "True -> False",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G001",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G002",
+   "state": "conditional",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G004",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G005",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Physician -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "authority_of",
+   "change": "Physician -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "interaction",
+   "change": "I001_PhysicianToEHR -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "interaction",
+   "change": "I001_PhysicianToEHR -> I002_EHRToPharmacy",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "interaction_source",
+   "change": "Physician -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_AccessRecords -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Diagnose",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Prescribe -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Diagnose",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D002_Patient -> none",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D002_Patient -> D001_Medication",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D001_Medication",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_Allergies -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_CurrentMedications",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_Dosage",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_MedName",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_MedicalHistory",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_PatientId",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Allergies -> Prop_Route",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R002",
+   "reference": "accepted_with_reservations",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "True -> False",
+   "state": "accepted_with_reservations",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G001",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G002",
+   "state": "conditional",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G003",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G005",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Physician -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "authority_of",
+   "change": "Physician -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Prescribe -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_AccessRecords",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Diagnose",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D001_Medication -> D002_Patient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D002_Patient",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_Dosage -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_Contraindications",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_MedName",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_Route",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R003",
+   "reference": "accepted",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "False -> True",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G001",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G002",
+   "state": "conditional",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G003",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G004",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "actor",
+   "change": "EHR_System -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actor",
+   "change": "EHR_System -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actor",
+   "change": "EHR_System -> Physician",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "interaction",
+   "change": "I002_EHRToPharmacy -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "interaction",
+   "change": "I002_EHRToPharmacy -> I001_PhysicianToEHR",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "interaction_source",
+   "change": "EHR_System -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "EHR_System -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "EHR_System -> Physician",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_Prescribe",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_QueryDatabase",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_StoreRecords",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Prescribe",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D001_Medication -> D002_Patient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D002_Patient",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R004",
+   "reference": "accepted",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "True -> False",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G001",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G002",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G003",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G004",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Pharmacist -> none",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Pharmacist -> EHR_System",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Pharmacist -> Physician",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "drop",
+   "field": "interaction",
+   "change": "I002_EHRToPharmacy -> none",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "interaction",
+   "change": "I002_EHRToPharmacy -> I001_PhysicianToEHR",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "drop",
+   "field": "interaction_source",
+   "change": "EHR_System -> none",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "EHR_System -> Pharmacist",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "EHR_System -> Physician",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Dispense -> none",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Dispense -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Dispense -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Dispense -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Dispense -> Action_Prescribe",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Dispense -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Dispense -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> none",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> Action_Prescribe",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_VerifyPrescription -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Prescribe",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D001_Medication -> D002_Patient",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D002_Patient",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R005",
+   "reference": "pending_review",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "False -> True",
+   "state": "pending_review",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G001",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G002",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G003",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G005",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Pharmacist -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Pharmacist -> EHR_System",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Pharmacist -> Physician",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "authority_of",
+   "change": "Pharmacist -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Pharmacist -> EHR_System",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Pharmacist -> Physician",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Prescribe -> none",
+   "state": "pending_review",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Dispense",
+   "state": "pending_review",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_VerifyPrescription",
+   "state": "pending_review",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D001_Medication -> D002_Patient",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D002_Patient",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_Dosage -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_Allergies",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_MedName",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_PatientId",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Dosage -> Prop_Route",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R006",
+   "reference": "rejected",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "False -> True",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G001",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G003",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G004",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G002 -> G005",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "actor",
+   "change": "EHR_System -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actor",
+   "change": "EHR_System -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actor",
+   "change": "EHR_System -> Physician",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_ForwardPrescription",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_Prescribe",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_StoreRecords",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_QueryDatabase -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Prescribe",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D001_Medication -> D002_Patient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D002_Patient",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_Contraindications -> none",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_Dosage",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_MedName",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Contraindications -> Prop_Route",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "conditional",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R007",
+   "reference": "conditional",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "False -> True",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G001",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G002",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G004",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G003 -> G005",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "context",
+   "change": "X002_Outpatient -> X001_EmergencyDept",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Physician -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "authority_of",
+   "change": "Physician -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "interaction",
+   "change": "I001_PhysicianToEHR -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "interaction",
+   "change": "I001_PhysicianToEHR -> I002_EHRToPharmacy",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "interaction_source",
+   "change": "Physician -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_AccessRecords -> none",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Diagnose",
+   "state": "accepted_with_reservations",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_AccessRecords -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Prescribe -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D002_Patient -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D002_Patient -> D001_Medication",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D001_Medication",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Allergies",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Dosage",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_MedName",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_PatientId",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Route",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R008",
+   "reference": "rejected",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "True -> False",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G001",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G002",
+   "state": "conditional",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G003",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G004 -> G005",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "context",
+   "change": "X002_Outpatient -> X001_EmergencyDept",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "actor",
+   "change": "Physician -> none",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actor",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "authority_of",
+   "change": "Physician -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> EHR_System",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "authority_of",
+   "change": "Physician -> Pharmacist",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_Prescribe -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Diagnose",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_Prescribe -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_ForwardPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D001_Medication -> none",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D001_Medication -> D002_Patient",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D002_Patient",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_Route -> none",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_Contraindications",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_Dosage",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_MedName",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_Route -> Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedicalHistory",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "accepted",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "accepted_with_reservations",
+   "outcome": "weaker acceptance"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R009",
+   "reference": "accepted",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "False -> True",
+   "state": "pending_review",
+   "outcome": "to review, rejection or not derived"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G001",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G002",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G003",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "seed_goal",
+   "change": "G005 -> G004",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "context",
+   "change": "X001_EmergencyDept -> X002_Outpatient",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actor",
+   "change": "EHR_System -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actor",
+   "change": "EHR_System -> Pharmacist",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actor",
+   "change": "EHR_System -> Physician",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "interaction",
+   "change": "I002_EHRToPharmacy -> none",
+   "state": "pending_review",
+   "outcome": "between review, rejection, not derived"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "interaction",
+   "change": "I002_EHRToPharmacy -> I001_PhysicianToEHR",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "interaction_source",
+   "change": "EHR_System -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "EHR_System -> Pharmacist",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "interaction_source",
+   "change": "EHR_System -> Physician",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_Diagnose",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_Dispense",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_Prescribe",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "actions",
+   "change": "Action_ForwardPrescription -> Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_AccessRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Diagnose",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Dispense",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_Prescribe",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_QueryDatabase",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_StoreRecords",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "actions",
+   "change": "+Action_VerifyPrescription",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "concepts",
+   "change": "D002_Patient -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "concepts",
+   "change": "D002_Patient -> D001_Medication",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "concepts",
+   "change": "+D001_Medication",
+   "state": "accepted",
+   "outcome": "more permissive"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "drop",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> none",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Allergies",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Dosage",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_MedName",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_PatientId",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "swap",
+   "field": "properties",
+   "change": "Prop_MedicalHistory -> Prop_Route",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Allergies",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Contraindications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_CurrentMedications",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Dosage",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_MedName",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_PatientId",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "properties",
+   "change": "+Prop_Route",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C001_HIPAA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C002_FDA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C003_ResponseTime",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "hard",
+   "change": "+C004_DispensingLog",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C001_HIPAA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C002_FDA",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C003_ResponseTime",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "add",
+   "field": "soft",
+   "change": "+C004_DispensingLog",
+   "state": "rejected",
+   "outcome": "unchanged"
+  },
+  {
+   "requirement": "R010",
+   "reference": "rejected",
+   "operator": "flag",
+   "field": "requires_protocol",
+   "change": "False -> True",
+   "state": "rejected",
+   "outcome": "unchanged"
+  }
+ ]
+}

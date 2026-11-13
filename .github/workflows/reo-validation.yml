@@ -1,0 +1,56 @@
+name: REO Validation
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate REO v1.0.0 and reproduce the paper results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Report environment
+        run: |
+          python --version
+          java -version
+          python -m pip freeze
+      - name: Standalone SHACL check of the example (ontology with its axioms as extra graph, RDFS inference, warnings allowed)
+        run: >
+          python -m pyshacl -s ontology/reo-shapes.ttl -e ontology/reo-core.ttl -i rdfs --allow-warnings
+          -f human examples/medical-emergency/hospital.ttl
+      - name: Keep the committed results for comparison
+        run: cp -r results "$RUNNER_TEMP/committed-results" && cp -r generated "$RUNNER_TEMP/committed-generated"
+      - name: Full pipeline (including the mutation corpus)
+        run: python scripts/run_all.py
+      - name: Compare regenerated results with the committed ones (run times, environment and digests excluded)
+        run: >
+          python scripts/compare_results.py "$RUNNER_TEMP/committed-results" results
+          --generated "$RUNNER_TEMP/committed-generated" generated --out results-comparison.json
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reo-results
+          path: |
+            results-comparison.json
+            results/
+            generated/
+            evaluation_results.csv
+            figures/
+          retention-days: 90

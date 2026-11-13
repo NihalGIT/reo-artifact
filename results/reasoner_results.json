@@ -1,0 +1,49 @@
+{
+  "engine": "HermiT via Owlready2",
+  "positive": {
+    "P1_core": {
+      "consistent": true,
+      "unsatisfiable_classes": [],
+      "triples": 500,
+      "pass": true
+    },
+    "P2_core_plus_derivation": {
+      "consistent": true,
+      "unsatisfiable_classes": [],
+      "triples": 753,
+      "pass": true
+    },
+    "P3_all_modules_example_extension_requirements_records": {
+      "consistent": true,
+      "unsatisfiable_classes": [],
+      "triples": 1436,
+      "pass": true
+    }
+  },
+  "negative": {
+    "N1_actor_typed_human_and_system": {
+      "current_detected": true
+    },
+    "N2_goal_used_as_interaction_source": {
+      "current_detected": true
+    },
+    "N3_goal_also_typed_constraint": {
+      "current_detected": true
+    },
+    "N4_actor_responsible_for_domain_concept": {
+      "current_detected": true
+    },
+    "N5_uncertainty_blocks_actor": {
+      "current_detected": true
+    },
+    "N6_second_interaction_source": {
+      "current_detected": true
+    },
+    "N7_record_with_two_decisions": {
+      "current_detected": true
+    },
+    "N8_requirement_seeded_by_actor": {
+      "current_detected": true
+    }
+  }
+}

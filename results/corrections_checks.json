@@ -1,0 +1,792 @@
+{
+  "checker": "reo_checker.py",
+  "policy": "ecre-policy-1.0.0",
+  "cases": 68,
+  "passed": 68,
+  "rows": [
+    {
+      "id": "P1-a",
+      "correction": "P1",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "O2 relates an actor to an action; with no responsible actor the capability cannot be decided (hard, unchecked)"
+    },
+    {
+      "id": "P1-b",
+      "correction": "P1",
+      "kind": "boundary",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the concept check passes, but the capability of the annotated action is still undecided; a general non-vacuity guard would accept this candidate"
+    },
+    {
+      "id": "P1-c",
+      "correction": "P1",
+      "kind": "regression",
+      "expected": "accepted",
+      "observed": "accepted",
+      "pass": true,
+      "rationale": "actor and capability given: O1 and O2 pass"
+    },
+    {
+      "id": "P1-d",
+      "correction": "P1",
+      "kind": "regression",
+      "expected": "accepted",
+      "observed": "accepted",
+      "pass": true,
+      "rationale": "a referenced concept that exists is a discharged obligation"
+    },
+    {
+      "id": "P1-e",
+      "correction": "P1",
+      "kind": "regression",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "no referenced element: nothing to check"
+    },
+    {
+      "id": "P1-f",
+      "correction": "P1",
+      "kind": "property",
+      "expected": 0,
+      "observed": 0,
+      "pass": true,
+      "rationale": "over 3072 annotation shapes, no acceptance-type or conditional decision without a passed O1-O6 check (examples of violations: [])"
+    },
+    {
+      "id": "P6-a",
+      "correction": "P6",
+      "kind": "positive",
+      "expected": "accepted",
+      "observed": "accepted",
+      "pass": true,
+      "rationale": "the authority holder is a reference; its O3 check passes"
+    },
+    {
+      "id": "P6-b",
+      "correction": "P6",
+      "kind": "negative",
+      "expected": "pending_review+no-interaction",
+      "observed": "pending_review+no-interaction",
+      "pass": true,
+      "rationale": "an expected source is a reference, but without a used interaction it cannot be checked"
+    },
+    {
+      "id": "P6-c",
+      "correction": "P6",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "a required protocol without a used interaction cannot be checked"
+    },
+    {
+      "id": "P7-a",
+      "correction": "P7",
+      "kind": "negative",
+      "expected": "no-unperformed-claims",
+      "observed": "no-unperformed-claims",
+      "pass": true,
+      "rationale": "only existence was checked"
+    },
+    {
+      "id": "P7-b",
+      "correction": "P7",
+      "kind": "regression",
+      "expected": true,
+      "observed": true,
+      "pass": true,
+      "rationale": "R001 requests all four sub-checks"
+    },
+    {
+      "id": "P2-a",
+      "correction": "P2",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the open premise U001 disappeared without a recorded resolution; removal is not validation"
+    },
+    {
+      "id": "P2-a'",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "accepted_with_reservations",
+      "observed": "accepted_with_reservations",
+      "pass": true,
+      "rationale": "a fresh assessment of the new snapshot alone (no history) does not see the premise"
+    },
+    {
+      "id": "P2-b",
+      "correction": "P2",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "removing only the type of U001 also removes the premise without resolution"
+    },
+    {
+      "id": "P2-c",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "accepted_with_reservations",
+      "observed": "accepted_with_reservations",
+      "pass": true,
+      "rationale": "the premise was established (validated) before its removal: nothing unresolved disappears"
+    },
+    {
+      "id": "P2-d",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "conditional",
+      "observed": "conditional",
+      "pass": true,
+      "rationale": "renamed premise: the successor exists and is still open"
+    },
+    {
+      "id": "P2-e",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "accepted_with_reservations",
+      "observed": "accepted_with_reservations",
+      "pass": true,
+      "rationale": "the premise still exists; the model now states explicitly that it bears on nothing the requirement reads"
+    },
+    {
+      "id": "P2-f",
+      "correction": "P2",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "a refuted premise (rejected) that disappears must not lead to acceptance"
+    },
+    {
+      "id": "P2-g",
+      "correction": "P2",
+      "kind": "regression",
+      "expected": "conditional",
+      "observed": "conditional",
+      "pass": true,
+      "rationale": "no change"
+    },
+    {
+      "id": "P2-h",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "accepted_with_reservations->accepted_with_reservations",
+      "observed": "accepted_with_reservations->accepted_with_reservations",
+      "pass": true,
+      "rationale": "a low-impact open premise only causes a reservation; its removal keeps that level (no review)"
+    },
+    {
+      "id": "P2-i",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "rejected",
+      "observed": "rejected",
+      "pass": true,
+      "rationale": "a failed hard check still rejects when a soft premise is also removed"
+    },
+    {
+      "id": "P3-a",
+      "correction": "P3",
+      "kind": "negative",
+      "expected": true,
+      "observed": true,
+      "pass": true,
+      "rationale": "a subclass axiom of the snapshot changes decisions ['R001', 'R002', 'R003', 'R009']; every changed decision must be selected"
+    },
+    {
+      "id": "P3-b",
+      "correction": "P3",
+      "kind": "regression",
+      "expected": [
+        "trace",
+        [
+          "R001",
+          "R002",
+          "R003",
+          "R008",
+          "R009"
+        ]
+      ],
+      "observed": [
+        "trace",
+        [
+          "R001",
+          "R002",
+          "R003",
+          "R008",
+          "R009"
+        ]
+      ],
+      "pass": true,
+      "rationale": "an instance-level change keeps the trace-based selection"
+    },
+    {
+      "id": "P3-c",
+      "correction": "P3",
+      "kind": "boundary",
+      "expected": [
+        true,
+        false
+      ],
+      "observed": [
+        true,
+        false
+      ],
+      "pass": true,
+      "rationale": "instance changes keep the vocabulary fingerprint; a new restriction (blank node) changes it"
+    },
+    {
+      "id": "P4-a",
+      "correction": "P4",
+      "kind": "negative",
+      "expected": [
+        "[\"pending_review\", true]"
+      ],
+      "observed": [
+        "[\"pending_review\", true]"
+      ],
+      "pass": true,
+      "rationale": "two IRIs share the local name Physician: the outcome must not depend on the hash seed, and no check on the ambiguous identifier is decided"
+    },
+    {
+      "id": "P4-b",
+      "correction": "P4",
+      "kind": "regression",
+      "expected": true,
+      "observed": true,
+      "pass": true,
+      "rationale": "a model without collisions is unaffected"
+    },
+    {
+      "id": "P4-c",
+      "correction": "P4",
+      "kind": "boundary",
+      "expected": "[\"conditional\", false]",
+      "observed": "[\"conditional\", false]",
+      "pass": true,
+      "rationale": "a collision on an element that R001 does not read leaves R001 unchanged"
+    },
+    {
+      "id": "P5-a",
+      "correction": "P5",
+      "kind": "negative",
+      "expected": [
+        2,
+        [
+          1,
+          1
+        ]
+      ],
+      "observed": [
+        2,
+        [
+          1,
+          1
+        ]
+      ],
+      "pass": true,
+      "rationale": "two annotations of one candidate on one snapshot are two records with one decision each"
+    },
+    {
+      "id": "P5-b",
+      "correction": "P5",
+      "kind": "regression",
+      "expected": 1,
+      "observed": 1,
+      "pass": true,
+      "rationale": "the same candidate assessed twice on the same snapshot is the same record"
+    },
+    {
+      "id": "P5-c",
+      "correction": "P5",
+      "kind": "boundary",
+      "expected": [
+        true,
+        2
+      ],
+      "observed": [
+        true,
+        2
+      ],
+      "pass": true,
+      "rationale": "a changed statement with an unchanged annotation keeps the decision (T18) but is a distinct record"
+    },
+    {
+      "id": "P5-d",
+      "correction": "P5",
+      "kind": "property",
+      "expected": true,
+      "observed": true,
+      "pass": true,
+      "rationale": "records of the ten requirements conform to the derivation shapes, including the non-vacuity constraint"
+    },
+    {
+      "id": "P8-a",
+      "correction": "P8",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "only one supersession step is migrated; a successor that is itself superseded goes to review, not to a rejection for an undefined element"
+    },
+    {
+      "id": "P8-b",
+      "correction": "P8",
+      "kind": "regression",
+      "expected": "conditional",
+      "observed": "conditional",
+      "pass": true,
+      "rationale": "one rename"
+    },
+    {
+      "id": "P9-a",
+      "correction": "P9",
+      "kind": "positive",
+      "expected": true,
+      "observed": true,
+      "pass": true,
+      "rationale": "a record produced by re-assessment points to the record it replaces"
+    },
+    {
+      "id": "P9-b",
+      "correction": "P9",
+      "kind": "regression",
+      "expected": 0,
+      "observed": 0,
+      "pass": true,
+      "rationale": "a first assessment supersedes nothing"
+    },
+    {
+      "id": "P10-a",
+      "correction": "P10",
+      "kind": "negative",
+      "expected": [
+        true,
+        true
+      ],
+      "observed": [
+        true,
+        true
+      ],
+      "pass": true,
+      "rationale": "an untyped element with an appliesTo link to the Physician becomes a constraint: the decision of R001 changes, so R001 must be selected (Proposition 2); the element's type was read, so it is in the trace"
+    },
+    {
+      "id": "P10-b",
+      "correction": "P10",
+      "kind": "negative",
+      "expected": [
+        true,
+        true
+      ],
+      "observed": [
+        true,
+        true
+      ],
+      "pass": true,
+      "rationale": "an untyped element with an affects link becomes an uncertainty: the changed decision must be selected"
+    },
+    {
+      "id": "P10-c",
+      "correction": "P10",
+      "kind": "regression",
+      "expected": [
+        15,
+        12,
+        9,
+        9,
+        12,
+        9,
+        10,
+        13,
+        10,
+        10
+      ],
+      "observed": [
+        15,
+        12,
+        9,
+        9,
+        12,
+        9,
+        10,
+        13,
+        10,
+        10
+      ],
+      "pass": true,
+      "rationale": "the example has no such links, so the ten traces keep their sizes (requirements table of the article)"
+    },
+    {
+      "id": "P11-a",
+      "correction": "P11",
+      "kind": "negative",
+      "expected": [
+        true,
+        true
+      ],
+      "observed": [
+        true,
+        true
+      ],
+      "pass": true,
+      "rationale": "a requirement outside the example's requirement namespace: its record must assess that requirement, not an IRI built from the identifier in the hospital namespace"
+    },
+    {
+      "id": "P11-b",
+      "correction": "P11",
+      "kind": "negative",
+      "expected": [
+        true,
+        "conditional"
+      ],
+      "observed": [
+        true,
+        "conditional"
+      ],
+      "pass": true,
+      "rationale": "the same model in another namespace gives the same decision; the record must name the consulted elements by their IRIs in that model, not by IRIs of the hospital namespace"
+    },
+    {
+      "id": "P11-c",
+      "correction": "P11",
+      "kind": "regression",
+      "expected": [
+        true,
+        true
+      ],
+      "observed": [
+        true,
+        true
+      ],
+      "pass": true,
+      "rationale": "in the running example the records assess req:R001-R010 and consult elements of the model, as before"
+    },
+    {
+      "id": "P12-a",
+      "correction": "P12",
+      "kind": "negative",
+      "expected": "refused",
+      "observed": "refused",
+      "pass": true,
+      "rationale": "two requirement resources share the identifier R001; records and re-assessment are keyed by the identifier, so one would silently stand for the other"
+    },
+    {
+      "id": "P12-b",
+      "correction": "P12",
+      "kind": "regression",
+      "expected": 10,
+      "observed": 10,
+      "pass": true,
+      "rationale": "the ten example identifiers are distinct"
+    },
+    {
+      "id": "P12-c",
+      "correction": "P12",
+      "kind": "property",
+      "expected": "refused",
+      "observed": "refused",
+      "pass": true,
+      "rationale": "the SPARQL encoding refuses the duplicate as well"
+    },
+    {
+      "id": "P13-a",
+      "correction": "P13",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "two seed goals (G002, G005): the contract must not choose a value or reinterpret it; the annotation goes to review"
+    },
+    {
+      "id": "P13-b",
+      "correction": "P13",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "two responsible actors (Physician, Pharmacist): the contract must not choose a value or reinterpret it; the annotation goes to review"
+    },
+    {
+      "id": "P13-c",
+      "correction": "P13",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the responsible actor is the literal \"Physician\", not an element: the contract must not choose a value or reinterpret it; the annotation goes to review"
+    },
+    {
+      "id": "P13-d",
+      "correction": "P13",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the protocol flag is the string \"true\", not an xsd:boolean: the contract must not choose a value or reinterpret it; the annotation goes to review"
+    },
+    {
+      "id": "P13-e",
+      "correction": "P13",
+      "kind": "property",
+      "expected": [
+        "pending_review",
+        "pending_review",
+        "pending_review",
+        "pending_review"
+      ],
+      "observed": [
+        "pending_review",
+        "pending_review",
+        "pending_review",
+        "pending_review"
+      ],
+      "pass": true,
+      "rationale": "the SPARQL encoding gives the same decisions on the four ill-formed annotations"
+    },
+    {
+      "id": "P13-f",
+      "correction": "P13",
+      "kind": "boundary",
+      "expected": "conditional",
+      "observed": "conditional",
+      "pass": true,
+      "rationale": "\"1\"^^xsd:boolean is a well-typed true: R001 keeps its decision"
+    },
+    {
+      "id": "P13-g",
+      "correction": "P13",
+      "kind": "regression",
+      "expected": [
+        "conditional",
+        "accepted_with_reservations",
+        "accepted",
+        "accepted",
+        "pending_review",
+        "rejected",
+        "conditional",
+        "rejected",
+        "accepted",
+        "rejected"
+      ],
+      "observed": [
+        "conditional",
+        "accepted_with_reservations",
+        "accepted",
+        "accepted",
+        "pending_review",
+        "rejected",
+        "conditional",
+        "rejected",
+        "accepted",
+        "rejected"
+      ],
+      "pass": true,
+      "rationale": "the ten example annotations are well formed: decisions of Table 9"
+    },
+    {
+      "id": "P14-a",
+      "correction": "P14",
+      "kind": "negative",
+      "expected": [
+        "rejected",
+        "rejected"
+      ],
+      "observed": [
+        "rejected",
+        "rejected"
+      ],
+      "pass": true,
+      "rationale": "the annotation names other:Physician as responsible actor; the model has only ex:Physician, so O1 finds the actor undefined (the SPARQL encoding agrees); requiresAuthorityOf still names ex:Physician"
+    },
+    {
+      "id": "P14-b",
+      "correction": "P14",
+      "kind": "boundary",
+      "expected": [
+        true,
+        true
+      ],
+      "observed": [
+        true,
+        true
+      ],
+      "pass": true,
+      "rationale": "fields are resolved one by one: the authority check on ex:Physician still passes while the foreign actor is undefined"
+    },
+    {
+      "id": "P14-c",
+      "correction": "P14",
+      "kind": "negative",
+      "expected": [
+        "rejected",
+        "rejected"
+      ],
+      "observed": [
+        "rejected",
+        "rejected"
+      ],
+      "pass": true,
+      "rationale": "a second concept other:D001_Medication, not in the model, is undefined (O4)"
+    },
+    {
+      "id": "P14-d",
+      "correction": "P14",
+      "kind": "regression",
+      "expected": "conditional",
+      "observed": "conditional",
+      "pass": true,
+      "rationale": "the annotation of R001 as written uses the model's IRIs"
+    },
+    {
+      "id": "P15-a",
+      "correction": "P15",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the Physician is declared superseded by a goal: the reference cannot be migrated to an element of another view; review, not a rejection for an undefined actor"
+    },
+    {
+      "id": "P15-b",
+      "correction": "P15",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "a successor that is not in the snapshot: review, not a rejection for an undefined concept"
+    },
+    {
+      "id": "P15-c",
+      "correction": "P15",
+      "kind": "regression",
+      "expected": "conditional",
+      "observed": "conditional",
+      "pass": true,
+      "rationale": "a valid rename of the actor migrates the three fields that name it"
+    },
+    {
+      "id": "P16-a",
+      "correction": "P16",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the previous assessment read back from its record: the open premise U001 is removed, so review (as P2-a)"
+    },
+    {
+      "id": "P16-b",
+      "correction": "P16",
+      "kind": "negative",
+      "expected": "accepted_with_reservations",
+      "observed": "accepted_with_reservations",
+      "pass": true,
+      "rationale": "a soft premise read back from its record keeps its level: a reservation, not a review (as P2-h)"
+    },
+    {
+      "id": "P16-c",
+      "correction": "P16",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "a later unrelated change after the removal of U001: its resolution is still not recorded, so the premise stays unresolved and R001 stays in review"
+    },
+    {
+      "id": "P16-d",
+      "correction": "P16",
+      "kind": "negative",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "the same, with the previous assessment read back"
+    },
+    {
+      "id": "P16-e",
+      "correction": "P16",
+      "kind": "boundary",
+      "expected": "accepted_with_reservations",
+      "observed": "accepted_with_reservations",
+      "pass": true,
+      "rationale": "U001 comes back validated: its resolution is recorded and the premise is no longer unresolved"
+    },
+    {
+      "id": "P16-f",
+      "correction": "P16",
+      "kind": "negative",
+      "expected": [
+        "not_derived",
+        "pending_review"
+      ],
+      "observed": [
+        "not_derived",
+        "pending_review"
+      ],
+      "pass": true,
+      "rationale": "U001 and the seed goal G002 are removed together (not derived); when G002 comes back, U001's removal is still not a resolution"
+    },
+    {
+      "id": "P16-g",
+      "correction": "P16",
+      "kind": "property",
+      "expected": [],
+      "observed": [],
+      "pass": true,
+      "rationale": "re-assessment from the record read back decides as re-assessment from the assessment in memory"
+    },
+    {
+      "id": "P2-j",
+      "correction": "P2",
+      "kind": "negative",
+      "expected": [
+        "conditional",
+        "accepted"
+      ],
+      "observed": [
+        "conditional",
+        "accepted"
+      ],
+      "pass": true,
+      "rationale": "U001 blocked G002, which the requirement no longer reaches after the same change; with the previous snapshot the removal is seen to bear on nothing the new assessment reads: no review"
+    },
+    {
+      "id": "P2-k",
+      "correction": "P2",
+      "kind": "boundary",
+      "expected": "pending_review",
+      "observed": "pending_review",
+      "pass": true,
+      "rationale": "with the previous snapshot, U001 still bears on G002, which R001 reads: review (as P2-a)"
+    },
+    {
+      "id": "P17-a",
+      "correction": "P17",
+      "kind": "negative",
+      "expected": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "observed": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "pass": true,
+      "rationale": "the derivation shapes reject a record that supersedes itself, a record of another requirement, and a supersession cycle; they accept a proper history; they reject two requiresAuthorityOf values"
+    }
+  ]
+}

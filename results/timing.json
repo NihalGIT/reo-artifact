@@ -1,0 +1,45 @@
+{
+  "environment": {
+    "python": "3.13.18",
+    "implementation": "CPython",
+    "system": "Linux",
+    "release": "6.18.44-fc-v338",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count": 2
+  },
+  "design": {
+    "batches": 5,
+    "repetitions_per_batch": 200,
+    "warmup_sets": 50,
+    "requirements": 10
+  },
+  "ms_per_requirement": {
+    "median": 0.0742201500088413,
+    "q1": 0.06994045000965343,
+    "q3": 0.09653957500290744,
+    "min": 0.06556419998560159,
+    "max": 0.5893762000141578,
+    "batch_medians": [
+      0.07298604999732561,
+      0.0747244000081082,
+      0.07174309998845274,
+      0.07043995000231007,
+      0.0995723999949405
+    ]
+  },
+  "ms_projection": {
+    "median": 2.1735595000791363,
+    "q1": 2.0670402500400087,
+    "q3": 2.467239999987214,
+    "n": 200
+  },
+  "ms_per_decision_incl_projection": 0.29157610001675494,
+  "ms_per_set_of_ten": {
+    "median": 0.742201500088413,
+    "q1": 0.6994045000965343,
+    "q3": 0.9653957500290744
+  },
+  "checker": "reo_checker.py",
+  "policy": "ecre-policy-1.0.0"
+}

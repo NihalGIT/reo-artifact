@@ -1,0 +1,62 @@
+{
+ "seed": 20261105,
+ "n": 5000,
+ "current": {
+  "checker": "reo_checker.py",
+  "policy": "ecre-policy-1.0.0",
+  "pairs": 5000,
+  "assessments": 50000,
+  "changed": 2569,
+  "violations": 0,
+  "delta_mismatches": 0,
+  "by_kind": {
+   "untype->type": {
+    "pairs": 1040,
+    "changed": 354,
+    "violations": 0
+   },
+   "untype->link": {
+    "pairs": 501,
+    "changed": 7,
+    "violations": 0
+   },
+   "orphan->v1": {
+    "pairs": 507,
+    "changed": 617,
+    "violations": 0
+   },
+   "v1->v1": {
+    "pairs": 253,
+    "changed": 302,
+    "violations": 0
+   },
+   "v1->type": {
+    "pairs": 486,
+    "changed": 575,
+    "violations": 0
+   },
+   "orphan->link": {
+    "pairs": 458,
+    "changed": 2,
+    "violations": 0
+   },
+   "untype->v1": {
+    "pairs": 501,
+    "changed": 554,
+    "violations": 0
+   },
+   "orphan->type": {
+    "pairs": 1001,
+    "changed": 146,
+    "violations": 0
+   },
+   "v1->link": {
+    "pairs": 253,
+    "changed": 12,
+    "violations": 0
+   }
+  },
+  "examples": [],
+  "seconds": 46.1
+ }
+}

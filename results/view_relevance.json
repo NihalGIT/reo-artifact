@@ -1,0 +1,40 @@
+{
+ "relevant_pairs": 96,
+ "pairs_by_view": {
+  "A": 24,
+  "G": 10,
+  "D": 20,
+  "C": 24,
+  "X": 10,
+  "U": 2,
+  "I": 6
+ },
+ "elements_by_view": {
+  "A": 9,
+  "G": 4,
+  "D": 8,
+  "C": 4,
+  "X": 2,
+  "U": 1,
+  "I": 2
+ },
+ "views_per_requirement": {
+  "R001": "AGDCXUI",
+  "R002": "AGDCXI",
+  "R003": "AGDCX",
+  "R004": "AGDCXI",
+  "R005": "AGDCXI",
+  "R006": "AGDCX",
+  "R007": "AGDCXU",
+  "R008": "AGDCXI",
+  "R009": "AGDCX",
+  "R010": "AGDCXI"
+ },
+ "requirements_by_number_of_views": {
+  "5": 3,
+  "6": 6,
+  "7": 1
+ },
+ "views_with_relevant_pairs": 7,
+ "unmapped": []
+}

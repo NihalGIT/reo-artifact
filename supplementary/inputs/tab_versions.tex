@@ -1,0 +1,23 @@
+\begin{table}[H]
+\caption{Versions of the components of the replication package of REO v1.0.0, read from the files (\texttt{supplement/make\_inputs.py}).}
+\small
+\begin{tabular}{@{}L{5.0cm}L{3.6cm}L{7.6cm}@{}}
+\toprule
+\textbf{Component} & \textbf{Version} & \textbf{Note} \\
+\midrule
+Replication package & REO v1.0.0 & \texttt{CITATION.cff}, \texttt{CHANGELOG.md}; to be deposited on Zenodo with a version DOI (not yet deposited) \\
+Core ontology \texttt{reo-core.ttl} & 1.0.0 & version IRI \url{http://re-environment-onto.org/ontology/release/1.0.0} \\
+Derivation module \texttt{reo-derivation.ttl} & 1.0.0 & version IRI \url{http://re-environment-onto.org/ontology/derivation/release/1.0.0} \\
+Core shapes \texttt{reo-shapes.ttl} & no version label in the file & validated with the ontology modules and RDFS inference \\
+Derivation shapes \texttt{reo-derivation-shapes.ttl} & REO v1.0.0 & record history and annotation well-formedness shapes \\
+Reference checker \texttt{reo\_checker.py} & REO v1.0.0 & implements policy \texttt{ecre-policy-1.0.0} \\
+SPARQL encoding \texttt{sparql\_oracle.py} & REO v1.0.0 & implements policy \texttt{ecre-policy-1.0.0} \\
+Contract policy & \texttt{ecre-policy-1.0.0} & written into every decision record (\texttt{reo:policyVersion}) \\
+Evaluation scripts & REO v1.0.0 & \texttt{scripts/run\_all.py} (25 steps); run manifest of 2026-11-10 \\
+Example and fixtures & labelled REO v1.0.0 & synthetic medical-emergency example, extension, ten requirements, three SHACL fixtures \\
+Competency-question suite & cq\_suite.json & 34 questions \\
+Language-model study packs & frozen before the studies & specification packs and outputs of E1--E3, frozen and hashed before execution; the derivation module of the pack lacks 4 properties of decision records (\texttt{candidateSnapshot}, \texttt{unresolvedHardPremise}, \texttt{unresolvedPremise}, \texttt{unresolvedSoftPremise}), which the studies do not use; the example files are identical \\
+Software of the recorded run & Python 3.13.18 & RDFLib 7.6.0, pySHACL 0.40.0, Owlready2 0.51, OpenJDK 21 \\
+\bottomrule
+\end{tabular}
+\end{table}

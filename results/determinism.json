@@ -1,0 +1,43 @@
+{
+ "seeds": [
+  "0",
+  "1",
+  "4242"
+ ],
+ "stride": 40,
+ "corpus_mutants": 20,
+ "e1_items": 385,
+ "distinct_digests": {
+  "example": 1,
+  "records": 1,
+  "corpus": 1,
+  "e1": 1
+ },
+ "deterministic": true,
+ "runs": {
+  "0": {
+   "example": "99435b18a66eeae9f351638ed0854d2daab7a76d9309e3b278eead5567b7ecc5",
+   "records": "7285bb2342681a5ce756c70ff02086f08abf3182d1854fefa7ee9cecdc11233e",
+   "corpus": "e3c5c9206b58b6fc019583d00510df5e3acd9508b2f60c4c43ae793545500760",
+   "corpus_mutants": 20,
+   "e1": "9356d18f66bcbacc5d0fe3c09dfbce616581b5237cde4c8d309203ede2a3b56c",
+   "e1_items": 385
+  },
+  "1": {
+   "example": "99435b18a66eeae9f351638ed0854d2daab7a76d9309e3b278eead5567b7ecc5",
+   "records": "7285bb2342681a5ce756c70ff02086f08abf3182d1854fefa7ee9cecdc11233e",
+   "corpus": "e3c5c9206b58b6fc019583d00510df5e3acd9508b2f60c4c43ae793545500760",
+   "corpus_mutants": 20,
+   "e1": "9356d18f66bcbacc5d0fe3c09dfbce616581b5237cde4c8d309203ede2a3b56c",
+   "e1_items": 385
+  },
+  "4242": {
+   "example": "99435b18a66eeae9f351638ed0854d2daab7a76d9309e3b278eead5567b7ecc5",
+   "records": "7285bb2342681a5ce756c70ff02086f08abf3182d1854fefa7ee9cecdc11233e",
+   "corpus": "e3c5c9206b58b6fc019583d00510df5e3acd9508b2f60c4c43ae793545500760",
+   "corpus_mutants": 20,
+   "e1": "9356d18f66bcbacc5d0fe3c09dfbce616581b5237cde4c8d309203ede2a3b56c",
+   "e1_items": 385
+  }
+ }
+}
